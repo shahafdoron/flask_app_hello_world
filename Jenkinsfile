@@ -26,10 +26,10 @@ pipeline {
                 sh './jenkins_steps/push.sh'
             }
         }
-        post {
+    }
+    post {
             always {
                 sh 'docker logout'
             }
         }
-    }
 }
