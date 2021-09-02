@@ -10,6 +10,7 @@ TEST_OUTPUT_FILE="flask_response.txt"
 
 docker run -d -p ${LOCAL_HOST_PORT}:${CONTAINER_PORT} --name ${LOCAL_CONTAINER_NAME} ${DOCKER_APP_NAME}
 
+sleep 30
 
 response=$(curl -L -s -o ${TEST_OUTPUT_FILE} ${DOCKER_APP_URL} -w "%{http_code}")
 
