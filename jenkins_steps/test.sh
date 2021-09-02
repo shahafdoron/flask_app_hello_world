@@ -8,7 +8,7 @@ LOCAL_HOST_PORT=5000
 DOCKER_APP_URL="localhost:${LOCAL_HOST_PORT}"
 TEST_OUTPUT_FILE="flask_response.txt"
 
-docker run -d -p ${LOCAL_PORT}:${CONTAINER_PORT} --name ${LOCAL_CONTAINER_NAME}
+docker run -d -p ${LOCAL_HOST_PORT}:${CONTAINER_PORT} --name ${LOCAL_CONTAINER_NAME}
 
 
 response=$(curl -L -s -o ${TEST_OUTPUT_FILE} ${DOCKER_APP_URL} -w "%{http_code}")
